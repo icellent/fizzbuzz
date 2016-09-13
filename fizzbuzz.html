@@ -5,22 +5,14 @@
     <title>FizzBuzz</title>
 </head>
 <body>
-    <div id="fizzbuzz"></div>
-    <script src="http://code.jquery.com/jquery.min.js"></script>
-    <script>
-        function d3n5(number) {
-            if (number % 3 === 0) return 'Fizz';
-            else if (number % 5 === 0) return 'Buzz';
-            return number;
-        }
+<form action="">
+    <label for="start">start number <input type="text" id="start"></label>
+    <label for="end">End number <input type="text" id="end"></label>
+    <button type="submit">Print out</button>
+</form>
 
-        function fizzbuzz(start, end) {
-            for (var i = start; i <= end; i++) {
-                $('#fizzbuzz').append(d3n5(i) + '<br />')
-            }
-        }
-
-        fizzbuzz(1, 100)
-    </script>
+<div id="fizzbuzz"></div>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
