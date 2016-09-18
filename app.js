@@ -4,24 +4,30 @@ function d3n5(number) {
   return number;
 }
 
-function fizzbuzz(start, end) {
-  for (var i = start; i <= end; i++) {
-    $('#fizzbuzz').append(d3n5(i) + '<br />');
+function generateArr(start, end) {
+  var arr = [];
+  for (var i= start; i<= end; i++) {
+    arr.push(i);
   }
+  return arr;
 }
+
 
 function validate(value) {
   return value && value % 1 == 0;
 }
 
+function putContent(start, end) {
+  var content = generateArr(start,end).map(d3n5).join('</br>');
+  if (validate(start) && validate(end) && start < end) {
+    return $('#fizzbuzz').empty().append(content);
+  }
+  return null;
+}
+
 $('form').on('submit', function (e) {
   e.preventDefault();
-  $('#fizzbuzz').empty();
   var start = +$('#start').val();
   var end = +$('#end').val();
-  if (validate(start) && validate(end)) {
-    fizzbuzz(start, end);
-  } else {
-    alert('Please input a validate value!')
-  }
+  putContent(start, end);
 });
